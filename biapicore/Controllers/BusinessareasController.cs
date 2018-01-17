@@ -20,13 +20,14 @@ namespace biapicore
         public IActionResult GetOne(string id)
         {
             BusinessAreasDTO businessArea = BusinessAreasDataStore.Current.BusinessAreas.FirstOrDefault(r => r.BusinessAreaCode == id);
+
             if (businessArea != null)
             {
                 return Ok(businessArea);
             }
             else
             {
-                return NotFound("Not Found");
+                return NotFound();
             }
 
         }

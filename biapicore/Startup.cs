@@ -38,15 +38,17 @@ namespace biapicore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStatusCodePages();
+
             app.UseMvc();
 
-            app.Run(async (context) =>
-            {
-                //throw new Exception("Error!!");
-                //var greeting = greeter.GetMessageOfTheDay();
-                context.Response.ContentType = "text/plain; charset=utf-8";
-                await context.Response.WriteAsync($"Not Found");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    //throw new Exception("Error!!");
+            //    //var greeting = greeter.GetMessageOfTheDay();
+            //    context.Response.ContentType = "text/plain; charset=utf-8";
+            //    await context.Response.WriteAsync($"Status Code: 404; Not Found ");
+            //});
 
         }
 
